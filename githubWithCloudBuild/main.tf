@@ -8,6 +8,7 @@ resource "github_repository" "githubRepo" {
 }
 
 resource "google_cloudbuild_trigger" "masterTrigger" {
+  provider = google-beta
   name = "${github_repository.githubRepo.name}-master"
   description = "ci for master branch for ${github_repository.githubRepo.html_url}"
   filename = var.ciMasterPath
@@ -22,6 +23,7 @@ resource "google_cloudbuild_trigger" "masterTrigger" {
 }
 
 resource "google_cloudbuild_trigger" "devTrigger" {
+  provider = google-beta
   name = "${github_repository.githubRepo.name}-dev"
   description = "ci for dev branches for ${github_repository.githubRepo.html_url}"
   filename = var.ciDevPath
