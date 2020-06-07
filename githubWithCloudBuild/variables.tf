@@ -2,6 +2,10 @@ variable "repoName" {
   type = string
 }
 
+variable "ownerName" {
+  type = string
+}
+
 variable "description" {
   type = string
 }
