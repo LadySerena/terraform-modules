@@ -6,10 +6,6 @@ variable "ownerName" {
   type = string
 }
 
-variable "description" {
-  type = string
-}
-
 variable "ciMainPath" {
   type = string
   default = "ci/main/cloudbuild.yaml"
