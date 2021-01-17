@@ -6,13 +6,18 @@ variable "ownerName" {
   type = string
 }
 
-variable "ciMainPath" {
-  type = string
-  default = "ci/main/cloudbuild.yaml"
+variable "ciBranchPushPath" {
+  type    = string
+  default = "ci/branch/cloudbuild.yaml"
 }
 
-variable "ciDevPath" {
-  type = string
+variable "ciTagPath" {
+  type    = string
+  default = "ci/release/cloudbuild.yaml"
+}
+
+variable "ciPullRequestPath" {
+  type    = string
   default = "ci/feature/cloudbuild.yaml"
 }
 
@@ -20,7 +25,9 @@ variable "ignoredFiles" {
   type = list(string)
   default = [
     "README.md",
-    ".gitignore"]
+    ".gitignore",
+    ".editorconfig"
+  ]
 }
 
 variable "project_id" {
